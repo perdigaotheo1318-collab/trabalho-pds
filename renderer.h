@@ -3,7 +3,6 @@
 
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
-
 #include "combate.h"
 
 typedef struct {
@@ -11,25 +10,24 @@ typedef struct {
     ALLEGRO_BITMAP* display_buffer;
     ALLEGRO_FONT* font;
 
-    // Sprites
+    // Sprites / imagens
     ALLEGRO_BITMAP* background;
     ALLEGRO_BITMAP* sprite_heroi;
-    ALLEGRO_BITMAP* sprite_inimigo_fraco;
     ALLEGRO_BITMAP* sprite_inimigo_forte;
+    ALLEGRO_BITMAP* sprite_inimigo_fraco;
 
     Combate* estado;
-
 } Renderer;
 
 void FillRenderer(Renderer* renderer);
-void Render(Renderer* renderer);
 void ClearRenderer(Renderer* renderer);
+void Render(Renderer* renderer);
 
-// internas
-void RenderBackground(Renderer* r);
-void RenderPlayer(Renderer* r);
-void RenderEnemies(Renderer* r);
-void RenderPlayerHand(Renderer* r);
-void RenderHud(Renderer* r);
+void RenderBackground(Renderer* renderer);
+void RenderPlayer(Renderer* renderer);
+void RenderEnemies(Renderer* renderer);
+void RenderPlayerHand(Renderer* renderer);
+void RenderHud(Renderer* renderer);
+void RenderDeck(Renderer* renderer, int x_left, int y_top);
 
 #endif
